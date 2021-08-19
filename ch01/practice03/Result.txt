@@ -1,0 +1,5 @@
+//CL引数の出力結果については省略、inefficient_echoの結果
+Result : 142ms
+
+//CL引数の出力結果については省略、efficient_echoの結果
+Result : 5ms
