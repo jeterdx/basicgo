@@ -1,0 +1,14 @@
+~/Desktop/remote_repo/basicgo/ch01/practice11 % ./fetchall https://www.facebook.com/ "https://www.lg.com/jp/eco/recycle#applianceRecycling" https://www.osakagas.co.jp/company/csr/charter02/valuechain.html https://www.jvckenwood.com/jp/sustainability/activity/he_recycle.html https://www.regza.com/tvs/company/csr/recycle.htm "https://www.dometic.com/ja-jp/outdoor/jp/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9/jp/%E5%B9%B3%E6%88%9028%E5%B9%B4%E5%BA%A6-%E7%89%B9%E5%AE%9A%E5%AE%B6%E5%BA%AD%E7%94%A8%E6%A9%9F%E5%99%A8%E5%BB%83%E6%A3%84%E7%89%A9%E3%81%AE%E5%86%8D%E5%95%86%E5%93%81%E5%8C%96%E7%AD%89%E5%AE%9F%E7%B8%BE" https://www.yanmar.com/jp/energy/ghp/about/recycle.html https://www.sony.com/ja/SonyInfo/csr_report/environment/recycle/japan.html https://www.chofu.co.jp/corporate/environment/pdf/H29.pdf http://www.toyotomi.jp/contribution/ecology/ https://www.hitachi-gls.co.jp/about/environment/recycle_kaden/jisseki.html
+0.88s   91303 https://www.yanmar.com/jp/energy/ghp/about/recycle.html
+0.88s   84245 https://www.osakagas.co.jp/company/csr/charter02/valuechain.html
+0.90s   26845 https://www.jvckenwood.com/jp/sustainability/activity/he_recycle.html
+0.90s   26533 https://www.hitachi-gls.co.jp/about/environment/recycle_kaden/jisseki.html
+0.92s   15863 https://www.regza.com/tvs/company/csr/recycle.htm
+1.07s  102664 https://www.chofu.co.jp/corporate/environment/pdf/H29.pdf
+1.24s   81248 https://www.sony.com/ja/SonyInfo/csr_report/environment/recycle/japan.html
+1.25s  143336 https://www.lg.com/jp/eco/recycle#applianceRecycling
+1.25s   20293 http://www.toyotomi.jp/contribution/ecology/
+1.26s  223728 https://www.facebook.com/
+1.42s   44182 https://www.dometic.com/ja-jp/outdoor/jp/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9/jp/%E5%B9%B3%E6%88%9028%E5%B9%B4%E5%BA%A6-%E7%89%B9%E5%AE%9A%E5%AE%B6%E5%BA%AD%E7%94%A8%E6%A9%9F%E5%99%A8%E5%BB%83%E6%A3%84%E7%89%A9%E3%81%AE%E5%86%8D%E5%95%86%E5%93%81%E5%8C%96%E7%AD%89%E5%AE%9F%E7%B8%BE
+%.2f elapsed
+ 1.42123469
