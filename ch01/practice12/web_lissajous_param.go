@@ -24,19 +24,19 @@ func main() {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	handler := func(w http.ResponseWriter, r *http.Request) { //handlerの中にURLのクエリを受け付ける処理を追加
-		keys, missing_message := r.URL.Query()["cycles"] //返り値の1つ目が入力された値、二つ目がエラー値
-		if !missing_message || len(keys[0]) < 1 {
+		keys := r.URL.Query().Get("cycles") //urlから該当するパラメータをget
+		if keys == "" {                     //string型はnilと比較できないのでこれを使う
 			log.Println("Url Param 'cycles' is missing")
 			return
 		}
-		cycles, err := strconv.Atoi(keys[0]) //cyclesという変数にkeys[0]、つまり、urlで入力されたパラメータ値を整数型に変換して格納
+		cycles, err := strconv.Atoi(keys) //cyclesという変数にkeys[0]、つまり、urlで入力されたパラメータ値を整数型に変換して格納
 		if err != nil {
 			log.Println("Url Param 'cycles' is invalid") //エラーが起こった場合の対処
 		}
 		lissajous(w, cycles) //lissajous関数を実行、cyclesを使うために引数としてcyclesを取れるようにlissajousも書き換えている
 	}
 	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe("localhost:2021", nil)) //webサーバの起動はここで行っている。
+	log.Fatal(http.ListenAndServe("localhost:2024", nil)) //webサーバの起動はここで行っている。
 }
 
 func lissajous(out io.Writer, cycles int) {
@@ -47,13 +47,15 @@ func lissajous(out io.Writer, cycles int) {
 		delay   = 8
 	)
 
+	var cycles_float float64 = float64(cycles)
+
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
 	for i := 0; i < nframes; i++ {
 		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, palette)
-		for t := 0.0; t < cycles*2*math.Pi; t += res {
+		for t := 0.0; t < cycles_float*2*math.Pi; t += res {
 			x := math.Sin(t)
 			y := math.Sin(t*freq + phase)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex)
