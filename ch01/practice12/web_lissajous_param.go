@@ -29,7 +29,7 @@ func main() {
 			log.Println("Url Param 'cycles' is missing")
 			return
 		}
-		cycles, err := strconv.Atoi(keys) //cyclesという変数にkeys[0]、つまり、urlで入力されたパラメータ値を整数型に変換して格納
+		cycles, err := strconv.Atoi(keys) //cyclesという変数に取得したパラメータを格納
 		if err != nil {
 			log.Println("Url Param 'cycles' is invalid") //エラーが起こった場合の対処
 		}
