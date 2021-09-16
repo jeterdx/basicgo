@@ -11,12 +11,9 @@ func init() {
 
 // PopCount は x のポピュレーションカウント （1 が設定されているビット数） を返します。
 func PopCount(x uint64) int {
-	return int(pc[byte(x>>(0*8))] + //255まではここで対応できる。
-		pc[byte(x>>(1*8))] + //それ以上に桁数がある場合は、8bitシフトさせて次の8bitの1の数をカウントする。byteなので8bitづつ。
-		pc[byte(x>>(2*8))] +
-		pc[byte(x>>(3*8))] +
-		pc[byte(x>>(4*8))] +
-		pc[byte(x>>(5*8))] +
-		pc[byte(x>>(6*8))] +
-		pc[byte(x>>(7*8))])
+	var counter int
+	for i := 0; i < 8; i++ {
+		counter += int(pc[byte(x>>(i*8))]) //8回足し算していたものを8回ループで回す。
+	}
+	return counter
 }

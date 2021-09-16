@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(popcountA.PopCount(46363))
-	fmt.Println(byte(255))
+	fmt.Println(popcountA.PopCount(128))
 }
