@@ -21,8 +21,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
 			os.Exit(1)
 		}
-		//HTTP Statusも同じ容量で抽出
-		s := resp.Status //resp構造体のフィールドの1つ、Bodyフィールド全体を読み込む。
+		s := resp.Status //resp構造体のフィールドの1つ、statusを読み込む。
 		fmt.Printf("%s", b)
 		fmt.Printf("\n%s", s)
 	}
