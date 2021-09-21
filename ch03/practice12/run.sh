@@ -1,5 +1,1 @@
-go build isAnagram.go
-
-./isAnagram
-
-rm ./isAnagram
+go test -v > anagram.out

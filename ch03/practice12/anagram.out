@@ -1,0 +1,64 @@
+=== RUN   Test_isAnagram
+=== RUN   Test_isAnagram/#00
+=== RUN   Test_isAnagram/#01
+=== RUN   Test_isAnagram/#02
+=== RUN   Test_isAnagram/#03
+=== RUN   Test_isAnagram/#04
+=== RUN   Test_isAnagram/#05
+=== RUN   Test_isAnagram/#06
+=== RUN   Test_isAnagram/#07
+=== RUN   Test_isAnagram/#08
+=== RUN   Test_isAnagram/#09
+=== RUN   Test_isAnagram/#10
+=== RUN   Test_isAnagram/#11
+=== RUN   Test_isAnagram/#12
+=== RUN   Test_isAnagram/#13
+=== RUN   Test_isAnagram/#14
+=== RUN   Test_isAnagram/#15
+=== RUN   Test_isAnagram/#16
+=== RUN   Test_isAnagram/#17
+=== RUN   Test_isAnagram/#18
+=== RUN   Test_isAnagram/#19
+=== RUN   Test_isAnagram/#20
+=== RUN   Test_isAnagram/#21
+=== RUN   Test_isAnagram/#22
+=== RUN   Test_isAnagram/#23
+=== RUN   Test_isAnagram/#24
+    isAnagram_test.go:51: isAnagram() = false, want true
+=== RUN   Test_isAnagram/#25
+=== RUN   Test_isAnagram/#26
+=== RUN   Test_isAnagram/#27
+=== RUN   Test_isAnagram/#28
+--- FAIL: Test_isAnagram (0.00s)
+    --- PASS: Test_isAnagram/#00 (0.00s)
+    --- PASS: Test_isAnagram/#01 (0.00s)
+    --- PASS: Test_isAnagram/#02 (0.00s)
+    --- PASS: Test_isAnagram/#03 (0.00s)
+    --- PASS: Test_isAnagram/#04 (0.00s)
+    --- PASS: Test_isAnagram/#05 (0.00s)
+    --- PASS: Test_isAnagram/#06 (0.00s)
+    --- PASS: Test_isAnagram/#07 (0.00s)
+    --- PASS: Test_isAnagram/#08 (0.00s)
+    --- PASS: Test_isAnagram/#09 (0.00s)
+    --- PASS: Test_isAnagram/#10 (0.00s)
+    --- PASS: Test_isAnagram/#11 (0.00s)
+    --- PASS: Test_isAnagram/#12 (0.00s)
+    --- PASS: Test_isAnagram/#13 (0.00s)
+    --- PASS: Test_isAnagram/#14 (0.00s)
+    --- PASS: Test_isAnagram/#15 (0.00s)
+    --- PASS: Test_isAnagram/#16 (0.00s)
+    --- PASS: Test_isAnagram/#17 (0.00s)
+    --- PASS: Test_isAnagram/#18 (0.00s)
+    --- PASS: Test_isAnagram/#19 (0.00s)
+    --- PASS: Test_isAnagram/#20 (0.00s)
+    --- PASS: Test_isAnagram/#21 (0.00s)
+    --- PASS: Test_isAnagram/#22 (0.00s)
+    --- PASS: Test_isAnagram/#23 (0.00s)
+    --- FAIL: Test_isAnagram/#24 (0.00s)
+    --- PASS: Test_isAnagram/#25 (0.00s)
+    --- PASS: Test_isAnagram/#26 (0.00s)
+    --- PASS: Test_isAnagram/#27 (0.00s)
+    --- PASS: Test_isAnagram/#28 (0.00s)
+FAIL
+exit status 1
+FAIL	_/Users/01043028/Desktop/remote_repo/basicgo/ch03/practice12	0.236s
