@@ -29,7 +29,7 @@ func main() {
 	index := make(map[int]commicInfo)
 	args := os.Args[1]
 
-	for i := 1; 10 > i; i++ {
+	for i := 1; 2529 > i; i++ {
 		//URLを作る
 		numStr := strconv.Itoa(i)
 		endpoint := "https://xkcd.com/"
@@ -51,6 +51,7 @@ func main() {
 			fmt.Fprintf(os.Stderr, "xkcd: %v\n", err)
 			os.Exit(1)
 		}
+		defer resp.Body.Close() // 自分で閉じる
 
 		//bodyをjson形式の構造体に変換。
 		structedJSON := []byte(body)
