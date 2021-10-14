@@ -5,10 +5,10 @@ import (
 )
 
 func main() {
-	fmt.Println(IsFloat("1234124145785439.3525525"))
+	fmt.Println(commaFloat("1234124145785439.3525525"))
 }
 
-func IsFloat(s string) string {
+func commaFloat(s string) string {
 	sAfterP := ""
 	sBeforeP := s
 	for i, v := range s {

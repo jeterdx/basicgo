@@ -18,7 +18,7 @@ func main() {
 	for range os.Args[1:] {
 		fmt.Println(<-ch) //チャンネルから受信したデータを出力している
 	}
-	fmt.Println("%.2f elapsed\n", time.Since(start).Seconds()) //プログラム全体の経過時間をプリントしている
+	fmt.Printf("%.2f elapsed\n", time.Since(start).Seconds()) //プログラム全体の経過時間をプリントしている
 }
 
 func fetch(url string, ch chan<- string) {
@@ -31,7 +31,6 @@ func fetch(url string, ch chan<- string) {
 	//ファイル出力の部分
 	content, err := ioutil.ReadAll(resp.Body)            //[]byte型にresp.Bodyを変換するためにReadAllで読み込みcontentに格納
 	ioutil.WriteFile("output.txt", content, os.ModePerm) //output.txtにcontentを書き込む。
-	//bs, _ := ioutil.ReadFile("output.txt")
 
 	nbytes, err := io.Copy(ioutil.Discard, resp.Body) //resp.Bodymをioutil.Discardにコピーしている、ioutil.Discardは書き込まれたデータ全てを破棄している。返り値はコピーしたバイト数とエラー。
 	resp.Body.Close()                                 // 資源をリークさせない

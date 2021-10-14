@@ -10,7 +10,7 @@ import (
 
 func main() {
 	for _, url := range os.Args[1:] {
-		if strings.HasPrefix(url, "http://") || strings.HasPrefix(url, "https://") { //httpもしくはhttpsの接頭辞がついているかを確認。
+		if strings.HasPrefix(url, "http://") || strings.HasPrefix(url, "https://") { //httpもしくはhttpsの接頭辞がついているかを確認。* if !--- {} の形で最初にprefixつける処理だけ書けばもっとスッキリする。
 			resp, err := http.Get(url)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "fetch: %v\n", err)

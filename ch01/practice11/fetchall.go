@@ -19,7 +19,7 @@ func main() {
 	for range os.Args[1:] {
 		fmt.Println(<-ch) //チャンネルから受信したデータを出力している
 	}
-	fmt.Println("%.2f elapsed\n", time.Since(start).Seconds()) //プログラム全体の経過時間をプリントしている
+	fmt.Printf("%.2f elapsed\n", time.Since(start).Seconds()) //プログラム全体の経過時間をプリントしている
 }
 
 func fetch(url string, ch chan<- string) {
