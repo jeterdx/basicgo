@@ -42,6 +42,6 @@ func corner(i, j int) (float64, float64) { // ます目 (i,j) のかどの点 (x
 }
 
 func f(x, y float64) float64 {
-	r := math.Hypot(x, y) // (0,0) からの距離
-	return math.Sin(r) / r
+	r := math.Nextafter(x, y) // (0,0) からの距離
+	return math.Cos(r) / r
 }
