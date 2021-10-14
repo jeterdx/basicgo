@@ -6,20 +6,17 @@ import (
 )
 
 func main() {
-	b := []byte{'g', 'o', 'l', ' ', ' ', 'a', 'n', 'g'}
-	fmt.Println(dupUnicodeSpaceToAsciiSpace(b))
+	b := []byte{'g', 'o', 'l', ' ', ' ', ' ', 'a', 'n', 'g', ' ', ' ', 'a'}
+	fmt.Println(string(dupUnicodeSpaceToAsciiSpace(b)))
 }
 
-//
 func dupUnicodeSpaceToAsciiSpace(b []byte) []byte {
-	n := 0
-	for i := 0; i < len(b); i++ {
-		if !(unicode.IsSpace(rune(b[i])) && unicode.IsSpace(rune(b[i+1]))) {
-			//nの要素にASCII Spaceを入れ、n+1の要素（asciiスペースじゃない要素）を2つ目のascii spaceに入れる。
-			b[n] = " " //byte型に対してascii spaceを入れるには。
-			b[n+1] = b[i+1]
-			n = n + 1
+	for i := 0; i < len(b)-1; i++ {
+		if unicode.IsSpace(rune(b[i])) && unicode.IsSpace(rune(b[i+1])) {
+			b[i] = ' '                    //1つ目のスペースにasciiスペースを代入
+			b = append(b[:i], b[i+1:]...) //1つ目のスペースまでの要素と2つ目のスペース以降の要素をくっつける
+			i--                           //要素が減った分indesxを1つ前にずらす
 		}
 	}
-	return b[:n+1]
+	return b
 }
