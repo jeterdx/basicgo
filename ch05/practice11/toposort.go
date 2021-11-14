@@ -5,8 +5,14 @@ import (
 	"os"
 )
 
-// prereqs は情報科学の各講座をそれぞれの事前条件となる講座と対応付けします。
+//以下のパターンに対応できてない。
 var prereqs = map[string]map[string]int{
+	"algorithms":      {"data structures": 0},
+	"data structures": {"discrete math": 0, "algorithms": 0},
+	"discrete math":   {"intro to programming": 0, "algorithms": 0},
+}
+
+/*
 	"algorithms": {"data structures": 0},
 	"calculus":   {"linear algebra": 0},
 	"compilers": {
@@ -23,6 +29,7 @@ var prereqs = map[string]map[string]int{
 	"programming languages": {"data structures": 0, "computer organization": 0},
 	"linear algebra":        {"calculus": 0},
 }
+*/
 
 func main() {
 	for i, course := range topoSort(prereqs) {
