@@ -33,7 +33,7 @@ func forEachNode(n *html.Node, pre, post func(n *html.Node)) {
 	}
 }
 
-func outline(n *html.Node) {
+func outline(n *html.Node) { //outline関数を作って、forEachNodeに無名関数でstartElement/endElementをそれぞれ渡す。
 	var depth int
 	forEachNode(n, func(n *html.Node) {
 		if n.Type == html.ElementNode {

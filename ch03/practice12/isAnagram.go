@@ -7,7 +7,13 @@ import (
 )
 
 func main() {
+	fmt.Println("aaaavvaav", "vvvaaaaaa")
 	fmt.Println(isAnagram("aaaavvaav", "vvvaaaaaa"))
+
+	fmt.Println("aaaa", "vvv")
+	fmt.Println(isAnagram("aaaa", "vvv"))
+
+	//日本語はできなかった。stringのままやろうとしているのがよろしくないポイ。
 }
 
 func isAnagram(s1 string, s2 string) bool {
@@ -20,18 +26,13 @@ label1:
 			if (string(v1) == string(v2)) && !(string(v1) == ".") { //ピリオドに置換されていたケースを除き、等しい文字列の時に文字列変換処理をする
 				s1 = strings.Replace(s1, string(s1[i1]), ".", 1)
 				s2 = strings.Replace(s2, string(s2[i2]), ".", 1)
-				fmt.Println(s1, s2)
 				break label1 //2重ループを抜けることで、ピリオドへの変換を反映しない状態での for文を一回抜ける。
 			}
 		}
 	}
 	if counter == n { //カウンターが文字列の分回りきったら、returnで結果を判定。
-		fmt.Println("----before recursion")
-		fmt.Println(s1, s2)
 		return s1 == s2
 	} else {
-		fmt.Println("----before return")
-		fmt.Println(s1, s2)
 		return isAnagram(s1, s2) //更新済みのs1/s2で再帰的に関数を呼び出す。
 	}
 }

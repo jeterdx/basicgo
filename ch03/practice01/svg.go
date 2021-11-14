@@ -34,10 +34,10 @@ func main() {
 	fmt.Println("</svg>")
 }
 
-//無限大の場合にfalseを返す判定。
+//「無限大/存在しない」の場合にfalseを返す判定。
 func isValid(points []float64) bool {
 	for _, value := range points {
-		if math.IsInf(value, 0) {
+		if math.IsInf(value, 0) || math.IsNaN(value) {
 			return false
 		}
 	}

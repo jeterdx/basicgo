@@ -10,8 +10,7 @@ import (
 
 func main() {
 	counts := make(map[string]int) // Unicode文字の数、keyがruneでコードポイント、valueが出現回数
-	isType := ""
-	invalid := 0 //不正な UTF-8文字の数
+	invalid := 0                   //不正な UTF-8文字の数
 
 	in := bufio.NewReader(os.Stdin)
 	for { //EOFでbreakなので条件式などは描かない、そのほかのerrは2つ目のifで処理
@@ -29,17 +28,13 @@ func main() {
 		}
 		//こっからジャンルごとに分類
 		if unicode.IsLetter(r) {
-			isType = "Letter"
-			counts[isType]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
+			counts["Letter"]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
 		} else if unicode.IsNumber(r) {
-			isType = "Number"
-			counts[isType]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
+			counts["Number"]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
 		} else if unicode.IsSpace(r) {
-			isType = "Space"
-			counts[isType]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
+			counts["Space"]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
 		} else {
-			isType = "Others"
-			counts[isType]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
+			counts["Others"]++ //countマップでisTypeをkeyにしてカウンタを1つ増やす。
 		}
 	}
 

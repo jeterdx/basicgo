@@ -29,7 +29,7 @@ func main() {
 	index := make(map[int]commicInfo)
 	args := os.Args[1]
 
-	for i := 1; 2529 > i; i++ {
+	for i := 1; 2529 > i; i++ { //めっちゃ時間かかるのでもっといいやり方がありそう。goroutineで並行処理。
 		//URLを作る
 		numStr := strconv.Itoa(i)
 		endpoint := "https://xkcd.com/"

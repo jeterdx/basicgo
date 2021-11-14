@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	b := []byte{'g', 'o', 'l', 'a', 'n', 'g'}
+	b := []byte{'g', 'o', 'l', 'a', 'n', 'g'} //これもpractice06に同じく、byte列じゃない。
 	fmt.Println(string(reverse(b)))
 }
 

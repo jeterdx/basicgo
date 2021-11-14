@@ -10,7 +10,7 @@ import (
 func main() {
 	doc, err := html.Parse(os.Stdin) //html.Parseの返り値はParse Tree
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "findlinks1: %v\n", err)
+		fmt.Fprintf(os.Stderr, "html.Parse: %v\n", err)
 		os.Exit(1)
 	}
 	for _, link := range visit(nil, doc) { //visitの返り値の<a href>に該当するvalueの[]stirngをrangeで回してる。
@@ -24,7 +24,7 @@ func visit(links []string, n *html.Node) []string {
 	if n == nil {
 		return links
 	}
-	if (n.Type == html.ElementNode) && (n.Data == "a" || n.Data == "image" || n.Data == "link" || n.Data == "script") {
+	if (n.Type == html.ElementNode) && (n.Data == "a" || n.Data == "img" || n.Data == "link" || n.Data == "script") {
 		for _, a := range n.Attr { //hrefは属性、attribute
 			if a.Key == "href" || a.Key == "src" {
 				links = append(links, a.Val)

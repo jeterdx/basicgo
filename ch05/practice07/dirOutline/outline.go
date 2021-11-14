@@ -7,11 +7,7 @@ import (
 	"golang.org/x/net/html"
 )
 
-// forEachNode は n から始まるツリー内の個々のノード x に対して
-// 関数pre(x) と post(x) を呼び出します。 その二つの関数はオプションです。
-// pre は子ノードを訪れる前に呼び出され （前順:preorder）、
-// post は子ノードを訪れた後に呼び出されます （後順:postorder）。
-
+//子要素がない時の処理・テストケースについては書けていない
 func main() {
 	doc, err := html.Parse(os.Stdin) //html.Parseの返り値はParse Tree
 	if err != nil {
@@ -20,6 +16,11 @@ func main() {
 	}
 	forEachNode(doc, startElement, endElement)
 }
+
+// forEachNode は n から始まるツリー内の個々のノード x に対して
+// 関数pre(x) と post(x) を呼び出します。 その二つの関数はオプションです。
+// pre は子ノードを訪れる前に呼び出され （前順:preorder）、
+// post は子ノードを訪れた後に呼び出されます （後順:postorder）。
 
 func forEachNode(n *html.Node, pre, post func(n *html.Node)) {
 	if pre != nil {

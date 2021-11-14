@@ -1,5 +1,5 @@
-go build dirfindlinks/findlinks.go
-go build dirfetch/fetch.go
+go build dirFindLinks/findlinks.go
+go build dirFetch/fetch.go
 
 ./fetch https://xkcd.com/ | ./findlinks
 

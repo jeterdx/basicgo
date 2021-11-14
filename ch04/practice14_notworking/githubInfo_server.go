@@ -45,9 +45,9 @@ type githubData struct {
 }
 
 type User struct {
-	login     string
-	id        int
-	node_id   string
+	Login     string
+	Id        int
+	NodeId    string `json:"node_id"`
 	HTMLURL   string `json:"html_url"`
 	AvatarURL string `json:"avatar_url"`
 }
@@ -72,7 +72,7 @@ type Milestone struct {
 
 //テンプレートを用意、とりあえずissuesをそのまま
 var htmlTemplate = template.Must(template.New("htmlTemplate").Parse(`
-	<h1>{{.TotalCount}} issues</h1>
+	<h1>issues</h1>
 	<table>
 		<tr style='text-align: left'>
 		<th>#</th>
@@ -80,7 +80,7 @@ var htmlTemplate = template.Must(template.New("htmlTemplate").Parse(`
 		<th>User</th>
 		<th>Title</th>
 		</tr>
-		{{range .Items}}
+		{{range .Issues}}
 		<tr>
 			<td><a href='{{.HTMLURL}}'>{{.Number}}</a></td>
 			<td>{{.State}}</td>
@@ -90,7 +90,7 @@ var htmlTemplate = template.Must(template.New("htmlTemplate").Parse(`
 		{{end}}
 		</table>
 
-		<h1>{{.TotalCount}} milestones</h1>
+		<h1>milestones</h1>
 		<table>
 			<tr style='text-align: left'>
 			<th>#</th>
@@ -98,7 +98,7 @@ var htmlTemplate = template.Must(template.New("htmlTemplate").Parse(`
 			<th>User</th>
 			<th>Title</th>
 			</tr>
-			{{range .Items}}
+			{{range .Milestones}}
 			<tr>
 				<td><a href='{{.HTMLURL}}'>{{.Number}}</a></td>
 				<td>{{.State}}</td>
