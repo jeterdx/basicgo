@@ -24,6 +24,9 @@ func KToF(k Kelvin) Fahrenheit  { return Fahrenheit((k-273.15)*9/5 + 32) }
 
 func (c Celsius) String() string { return fmt.Sprintf("%g°C", c) }
 
+//func (f Fahrenheit) String() string { return fmt.Sprintf("%g°F", f) }
+//func (k Kelvin) String() string     { return fmt.Sprintf("%g°K", k) }
+
 /*
 //!+flagvalue
 package flag
@@ -50,6 +53,9 @@ func (f *celsiusFlag) Set(s string) error {
 		return nil
 	case "F", "°F":
 		f.Celsius = FToC(Fahrenheit(value))
+		return nil
+	case "K", "°K":
+		f.Celsius = KToC(Kelvin(value))
 		return nil
 	}
 	return fmt.Errorf("invalid temperature %q", s)
