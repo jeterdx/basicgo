@@ -19,11 +19,12 @@ func main() {
 	x.Add(15)
 	x.Add(64)
 	x.Add(127)
-	x.Add(128)
+	x.Add(200)
+	x.Add(3000)
 	fmt.Println(x.Len())
 	fmt.Println(x.String())
 
-	x.Remove(15)
+	x.Remove(200)
 	fmt.Println(x.String())
 
 	x.Clear()

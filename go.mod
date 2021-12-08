@@ -2,4 +2,7 @@ module basicgo
 
 go 1.16
 
-require gopl.io v0.0.0-20211004154805-1ae3ec64947b //direct
+require (
+	golang.org/x/net v0.0.0-20210929193557-e81a3d93ecf6
+	gopl.io v0.0.0-20211004154805-1ae3ec64947b //direct
+)

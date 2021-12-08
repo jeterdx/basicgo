@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var cw countWord
+	var cw countWord //countword型の変数cwを用意する、実態はint型。
 	cw.Write([]byte("hello my name is ..."))
 	fmt.Println(cw)
 
@@ -17,7 +17,7 @@ func main() {
 
 type countWord int
 
-func (c *countWord) Write(p []byte) (int, error) {
+func (c *countWord) Write(p []byte) (int, error) { //c *countWord として、countWord型のポインタ型をレシーバとして受けている。これによって、countWord型をこの関数内で使うことができる。Writeメソッドはio.Writerで定義されている返り値と引数を踏襲している
 	n := len(p)
 
 	for len(p) > 0 {

@@ -1,4 +1,4 @@
-package main
+/* package main
 
 import (
 	"fmt"
@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strings"
 
 	"gopl.io/ch5/links"
 )
@@ -43,8 +42,9 @@ func copyPages(url string) {
 		fmt.Fprintf(os.Stderr, "copyPages: reading %s: %v\n", url, err)
 		os.Exit(1)
 	}
+}
 
-	/*URL・ファイル名・ディレクトリ名の操作がうまくできず断念
+/*URL・ファイル名・ディレクトリ名の操作がうまくできず断念
 	//同じドメインかどうかの確認、ディレクトリを階層構造で作成、ページ内容をコピーしたファイルを作成
 	if strings.HasPrefix(url, string(os.Args[1])) { //同じドメインかどうか確認
 		err := os.MkdirAll(url, 0755)
@@ -54,7 +54,7 @@ func copyPages(url string) {
 	}
 
 }
-*/
+
 
 func crawl(url string) []string {
 	fmt.Println(url)
@@ -76,3 +76,4 @@ func check(e error) {
 		panic(e)
 	}
 }
+*/

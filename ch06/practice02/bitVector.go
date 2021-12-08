@@ -20,13 +20,13 @@ func main() {
 	fmt.Println(x.String())
 }
 
-func (s *IntSet) AddAll(xList ...int) {
+func (s *IntSet) AddAll(xList ...int) { //可変個の引数を受け取ってセットに追加する。
 	for _, v := range xList {
-		word, bit := v/64, uint(v%64) //xの商と余剰をそれぞれwordとbitに入れる
-		for word >= len(s.words) {    //最初はs.wordsは空。s.wordsのlenは0で、xが1だとwordは0なので条件を満たす
-			s.words = append(s.words, 0) //0をリストに追加する。lenが1になる。なので１回でループを抜ける。65以上から2つ目の要素が追加される。1つの要素で64個まで整数を保管。
+		word, bit := v/64, uint(v%64)
+		for word >= len(s.words) {
+			s.words = append(s.words, 0)
 		}
-		s.words[word] |= 1 << bit //保管した数値番目のbitを1にしておく。
+		s.words[word] |= 1 << bit
 	}
 }
 
