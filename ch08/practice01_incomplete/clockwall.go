@@ -10,6 +10,7 @@ import (
 	"net"
 	"os"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -37,8 +38,9 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		defer conn.Close()
-		go mustCopy(os.Stdout, conn)
+		//defer conn.Close()
+		go mustCopy(os.Stdout, conn) //２つ目を標準出力した段階でコネクションが切れてしまう。
+		time.Sleep(1 * time.Second)
 	}
 }
 

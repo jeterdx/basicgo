@@ -31,7 +31,7 @@ func main() {
 func handleConn(c net.Conn) {
 	defer c.Close()
 	for {
-		_, err := io.WriteString(c, time.Now().Format("15:04:05\n")) //cはio.Writer型でもあるから引数に取れる。なぜならnetパッケージのconnインタフェースがWriteメソッドを実装してるから。
+		_, err := io.WriteString(c, time.Now().Format("15:04:05\n")) //cはio.Writer型でもあるから引数に取れる。なぜならnetパッケージのconnインタフェースがWriteメソッドを実装してるから。WriteStringを使ってるから普通のStringを書き込めている。
 		if err != nil {
 			return // 例: クライアントとの接続が切れた
 		}
