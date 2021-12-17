@@ -4,13 +4,15 @@ package main
 import "fmt"
 
 func main() {
-	Deposit(10000)
-	fmt.Println(Balance())
-	Deposit(3000)
-	fmt.Println(Withdraw(2000))
-	fmt.Println(Balance())
-	fmt.Println(Withdraw(20000))
-	fmt.Println(Balance())
+	for {
+		go Deposit(10000)
+		go fmt.Println(Balance())
+		go Deposit(3000)
+		go fmt.Println(Withdraw(2000))
+		go fmt.Println(Balance())
+		go fmt.Println(Withdraw(20000))
+		go fmt.Println(Balance())
+	}
 }
 
 var deposits = make(chan int)  // 入金額を送信する

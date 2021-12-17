@@ -4,5 +4,7 @@ go build httpHTML.go
 
 open "http://localhost:8000/list"
 
+rm ./httpHTML
+
 #ps ax | grep http
 #kill -9 PID

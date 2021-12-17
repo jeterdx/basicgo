@@ -82,33 +82,4 @@ func main() {
 	}})
 	printTracks(tracks)
 
-	/* 	//tracksをbyArtist型にcastして汎用のSortを使える
-	   	sort.Sort(byArtist(tracks))
-	   	printTracks(tracks)
-	   	fmt.Println()
-
-	   	//Sortパッケージが提供しているReverseを使えば逆順からもSortできる。これはsort.Sortのインタフェースを満たしているから使える。
-	   	sort.Sort(sort.Reverse(byArtist(tracks))) //sort.Sortが必要なのはなぜ？
-	   	printTracks(tracks)
-	   	fmt.Println()
-
-	   	//年代でのSort
-	   	sort.Sort(byYear(tracks))
-	   	printTracks(tracks)
-	   	fmt.Println() */
-
 }
-
-/* ///以下のメソッドを定義することでsort.Sortのインタフェースを満たすことができる
-type byArtist []*Track
-
-func (x byArtist) Len() int           { return len(x) }
-func (x byArtist) Less(i, j int) bool { return x[i].Artist < x[j].Artist }
-func (x byArtist) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
-
-//年代によるSortのメソッドも追加しておく。これもsort.Sortのインタフェースを満たす
-type byYear []*Track
-
-func (x byYear) Len() int           { return len(x) }
-func (x byYear) Less(i, j int) bool { return x[i].Year < x[j].Year }
-func (x byYear) Swap(i, j int)      { x[i], x[j] = x[j], x[i] } */

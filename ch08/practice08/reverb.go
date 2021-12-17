@@ -50,7 +50,7 @@ func handleConn(c net.Conn) {
 		c.Close()
 	case <-confirmInput:
 		for input.Scan() {
-			fmt.Println("aaaa")
+			//fmt.Println("aaaa")
 			echo(c, input.Text(), 1*time.Second)
 		}
 	}

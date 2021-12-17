@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 	"unicode"
 )
@@ -32,14 +33,20 @@ func isPalindrome(s sort.Interface) bool {
 	length := s.Len() //len(s)だとエラーが出る。
 	for i := 0; i < length/2; i++ {
 		j := length - 1 - i
-		if !s.Less(i, j) && !s.Less(j, i) { //両方の結果がfalseだったら続ける
+		if !s.Less(i, j) && !s.Less(j, i) { //両方の結果がfalse、つまりどっちから見てもLessじゃない、同じだったら、処理を続ける
 			continue
 		}
+		return false //ループを抜けちゃったらfalse
 	}
-	return true
+	return true //for文の条件式を満たさなくなるまで回せたら回文なのでtrue
 }
 
 func main() {
-	var runeList = []rune("aaaaa")
-	isPalindrome(runeList) //Lenメソッドが実装されてませんってエラーが出る。。。未解決。
+	text := "bababababbbbbb"
+	var rl = runeList(text)
+	if isPalindrome(rl) {
+		fmt.Println(text + " is palindrome")
+	} else {
+		fmt.Println(text + " is not palindrome")
+	}
 }

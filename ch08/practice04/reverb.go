@@ -53,6 +53,6 @@ func handleConn(c net.Conn) {
 		if !ok {
 			log.Fatal("cast to TCPConn did not succeed")
 		}
-		tcpConn.CloseWrite() //カウンターが0、全てのechoが終了したら書き込みのコネクションをクローズする。
+		tcpConn.CloseRead() //カウンターが0、全てのechoが終了したらサーバ側の読み込みのコネクションをクローズする。
 	}()
 }

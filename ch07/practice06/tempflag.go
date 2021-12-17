@@ -9,6 +9,6 @@ import (
 var temp = tempconv.CelsiusFlag("temp", 10.0, "the temperature") //ここの内部処理でflag.CommandLine.Varが走っているのでmain関数内でparseができる。
 
 func main() {
-	flag.Parse() //このParse関数を呼ぶことでなぜtempconvパッケージに定義しているSet関数が呼ばれているのかが理解できない。
+	flag.Parse()
 	fmt.Println(*temp)
 }
