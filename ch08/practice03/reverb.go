@@ -36,9 +36,13 @@ func echo(c net.Conn, shout string, delay time.Duration) {
 }
 
 func handleConn(c net.Conn) {
+	tcpConn, ok := c.(*net.TCPConn)
+	if !ok {
+		log.Fatal("cast to TCPConn did not succeed")
+	}
 	input := bufio.NewScanner(c) //NewScannerの引数に取れるのはio.Reader型。os.Stdinもconnも満たしている。この一文でコンソールから標準入力を受け付ける。
 	for input.Scan() {
 		echo(c, input.Text(), 1*time.Second)
 	}
-	c.Close()
+	tcpConn.CloseRead() //サーバ側は読み込みだけをCloseしておくことで、書き込みは継続できる。
 }
